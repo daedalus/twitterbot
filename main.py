@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
+#
+# Author Dario Clavijo
 
 from tweepy.streaming import StreamListener
 from tweepy import OAuthHandler, API
