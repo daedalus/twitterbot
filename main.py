@@ -133,10 +133,7 @@ if __name__ == '__main__':
 
 	atexit.register(exitfunc)
 	
-
 	warnings.filterwarnings("ignore")
- 
-
  
 	auth_handler = OAuthHandler(consumer_key, consumer_secret)
 	auth_handler.set_access_token(access_token, access_token_secret)
@@ -145,6 +142,7 @@ if __name__ == '__main__':
  
 	listener = PyStreamListener()
     	stream = Stream(auth_handler, listener)
+    	
 	try:
     		stream.filter(track=track)
 	except:
