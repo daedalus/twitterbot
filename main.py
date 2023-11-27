@@ -33,16 +33,14 @@ def exitfunc():
 	savefile('twitts.txt',twitts)
 
 def loadfile(filename,var):
-	f = open(filename, 'r')
-        x = f.readlines()
-        for line in x:
-                var.append(line.replace('\n','').replace('\r',''))
-        f.close()
+	with open(filename, 'r') as f:
+		x = f.readlines()
+		for line in x:
+		        var.append(line.replace('\n','').replace('\r',''))
 
 def savefile(filename,var):
-	f = open(filename, 'w')
-	f.writelines("%s\n" % l for l in var)
-	f.close()
+	with open(filename, 'w') as f:
+		f.writelines("%s\n" % l for l in var)
  
 AVOID = ["monty", "leather", "skin", "bag", "blood", "bite"]
 
